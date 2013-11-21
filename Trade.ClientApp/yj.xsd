@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Context" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Context" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="Context" msprop:Generator_UserDSName="Context">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="yj" msprop:Generator_UserTableName="yj" msprop:Generator_RowEvArgName="yjRowChangeEvent" msprop:Generator_TableVarName="tableyj" msprop:Generator_TablePropName="yj" msprop:Generator_RowDeletingName="yjRowDeleting" msprop:Generator_RowChangingName="yjRowChanging" msprop:Generator_RowDeletedName="yjRowDeleted" msprop:Generator_RowEvHandlerName="yjRowChangeEventHandler" msprop:Generator_TableClassName="yjDataTable" msprop:Generator_RowChangedName="yjRowChanged" msprop:Generator_RowClassName="yjRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:short" minOccurs="0" />
+              <xs:element name="YJLX" msprop:Generator_ColumnVarNameInTable="columnYJLX" msprop:Generator_ColumnPropNameInRow="YJLX" msprop:Generator_ColumnPropNameInTable="YJLXColumn" msprop:Generator_UserColumnName="YJLX" type="xs:string" minOccurs="0" />
+              <xs:element name="YJX" msprop:Generator_ColumnVarNameInTable="columnYJX" msprop:Generator_ColumnPropNameInRow="YJX" msprop:Generator_ColumnPropNameInTable="YJXColumn" msprop:Generator_UserColumnName="YJX" type="xs:string" minOccurs="0" />
+              <xs:element name="YJTJ" msprop:Generator_ColumnVarNameInTable="columnYJTJ" msprop:Generator_ColumnPropNameInRow="YJTJ" msprop:Generator_ColumnPropNameInTable="YJTJColumn" msprop:Generator_UserColumnName="YJTJ" type="xs:string" minOccurs="0" />
+              <xs:element name="YJFZ" msprop:Generator_ColumnVarNameInTable="columnYJFZ" msprop:Generator_ColumnPropNameInRow="YJFZ" msprop:Generator_ColumnPropNameInTable="YJFZColumn" msprop:Generator_UserColumnName="YJFZ" type="xs:string" minOccurs="0" />
+              <xs:element name="YJFS" msprop:Generator_ColumnVarNameInTable="columnYJFS" msprop:Generator_ColumnPropNameInRow="YJFS" msprop:Generator_ColumnPropNameInTable="YJFSColumn" msprop:Generator_UserColumnName="YJFS" type="xs:string" minOccurs="0" />
+              <xs:element name="SYDZ" msprop:Generator_ColumnVarNameInTable="columnSYDZ" msprop:Generator_ColumnPropNameInRow="SYDZ" msprop:Generator_ColumnPropNameInTable="SYDZColumn" msprop:Generator_UserColumnName="SYDZ" type="xs:string" minOccurs="0" />
+              <xs:element name="ZJCFSJ" msprop:Generator_ColumnVarNameInTable="columnZJCFSJ" msprop:Generator_ColumnPropNameInRow="ZJCFSJ" msprop:Generator_ColumnPropNameInTable="ZJCFSJColumn" msprop:Generator_UserColumnName="ZJCFSJ" type="xs:string" minOccurs="0" />
+              <xs:element name="YJYXSD" msprop:Generator_ColumnVarNameInTable="columnYJYXSD" msprop:Generator_ColumnPropNameInRow="YJYXSD" msprop:Generator_ColumnPropNameInTable="YJYXSDColumn" msprop:Generator_UserColumnName="YJYXSD" type="xs:string" minOccurs="0" />
+              <xs:element name="SFYX" msprop:Generator_ColumnVarNameInTable="columnSFYX" msprop:Generator_ColumnPropNameInRow="SFYX" msprop:Generator_ColumnPropNameInTable="SFYXColumn" msprop:Generator_UserColumnName="SFYX" type="xs:string" minOccurs="0" />
+              <xs:element name="XDSJD" msprop:Generator_ColumnVarNameInTable="columnXDSJD" msprop:Generator_ColumnPropNameInRow="XDSJD" msprop:Generator_ColumnPropNameInTable="XDSJDColumn" msprop:Generator_UserColumnName="XDSJD" type="xs:string" minOccurs="0" />
+              <xs:element name="CFCS" msprop:Generator_ColumnVarNameInTable="columnCFCS" msprop:Generator_ColumnPropNameInRow="CFCS" msprop:Generator_ColumnPropNameInTable="CFCSColumn" msprop:Generator_UserColumnName="CFCS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

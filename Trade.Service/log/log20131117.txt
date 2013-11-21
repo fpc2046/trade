@@ -1,0 +1,2 @@
+2013-11-17 15:30:51,633 [367] [4] INFO  Trade.DataAccess.DbHelper  - select  ID,SettleDate,SaleDate,Goods,SaleNo,SaleAmount,SalePrice,HoldPrice,SaleProfitLoss,SaleCommission,BuyNo,BuyPrice,BuyTime,SaleType,Direction,Operate,UserNo  FROM Sales  order by ID DESC
+

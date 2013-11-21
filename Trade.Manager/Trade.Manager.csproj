@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8D94882-8152-461F-B814-A53384DBC238}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trade.Manager</RootNamespace>
+    <AssemblyName>数据维护工具</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabStrip, Version=2.0.2523.29272, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\TabStrip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configs\ImportAccount.cs" />
+    <Compile Include="Frms\FrmAnnouncementModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmAnnouncementModify.Designer.cs">
+      <DependentUpon>FrmAnnouncementModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmBankAccountFoundModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmBankAccountFoundModify.Designer.cs">
+      <DependentUpon>FrmBankAccountFoundModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmDealModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmDealModify.Designer.cs">
+      <DependentUpon>FrmDealModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmFundDetailModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmFundDetailModify.Designer.cs">
+      <DependentUpon>FrmFundDetailModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmFundFlowModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmFundFlowModify.Designer.cs">
+      <DependentUpon>FrmFundFlowModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmFundModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmFundModify.Designer.cs">
+      <DependentUpon>FrmFundModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmHoldModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmHoldModify.Designer.cs">
+      <DependentUpon>FrmHoldModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmTradeAccountFundModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmTradeAccountFundModify.Designer.cs">
+      <DependentUpon>FrmTradeAccountFundModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\DataGridEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UcContorls\DataGridEx.Designer.cs">
+      <DependentUpon>DataGridEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\OpenTypes.cs" />
+    <Compile Include="Frms\FrmSaleModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmSaleModify.Designer.cs">
+      <DependentUpon>FrmSaleModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcContorls\UcAnnouncement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcAnnouncement.Designer.cs">
+      <DependentUpon>UcAnnouncement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcBankAccountFound.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcBankAccountFound.Designer.cs">
+      <DependentUpon>UcBankAccountFound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcDeals.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcDeals.Designer.cs">
+      <DependentUpon>UcDeals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcFundDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcFundDetail.Designer.cs">
+      <DependentUpon>UcFundDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcFundFlows.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcFundFlows.Designer.cs">
+      <DependentUpon>UcFundFlows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcFunds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcFunds.Designer.cs">
+      <DependentUpon>UcFunds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcHolds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcHolds.Designer.cs">
+      <DependentUpon>UcHolds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcImport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcImport.Designer.cs">
+      <DependentUpon>UcImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcMaintenance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcMaintenance.Designer.cs">
+      <DependentUpon>UcMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcSales.Designer.cs">
+      <DependentUpon>UcSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcContorls\UcTradeAccountFund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcContorls\UcTradeAccountFund.Designer.cs">
+      <DependentUpon>UcTradeAccountFund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uitls\TimerConverter.cs" />
+    <Compile Include="Web References\localhost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Frms\FrmAnnouncementModify.resx">
+      <DependentUpon>FrmAnnouncementModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmBankAccountFoundModify.resx">
+      <DependentUpon>FrmBankAccountFoundModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmDealModify.resx">
+      <DependentUpon>FrmDealModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmFundDetailModify.resx">
+      <DependentUpon>FrmFundDetailModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmFundFlowModify.resx">
+      <DependentUpon>FrmFundFlowModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmFundModify.resx">
+      <DependentUpon>FrmFundModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmHoldModify.resx">
+      <DependentUpon>FrmHoldModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmTradeAccountFundModify.resx">
+      <DependentUpon>FrmTradeAccountFundModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\DataGridEx.resx">
+      <DependentUpon>DataGridEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmSaleModify.resx">
+      <DependentUpon>FrmSaleModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UcContorls\UcAnnouncement.resx">
+      <DependentUpon>UcAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcBankAccountFound.resx">
+      <DependentUpon>UcBankAccountFound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcDeals.resx">
+      <DependentUpon>UcDeals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcFundDetail.resx">
+      <DependentUpon>UcFundDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcFundFlows.resx">
+      <DependentUpon>UcFundFlows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcFunds.resx">
+      <DependentUpon>UcFunds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcHolds.resx">
+      <DependentUpon>UcHolds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcImport.resx">
+      <DependentUpon>UcImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcMaintenance.resx">
+      <DependentUpon>UcMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcSales.resx">
+      <DependentUpon>UcSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcContorls\UcTradeAccountFund.resx">
+      <DependentUpon>UcTradeAccountFund.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\localhost\Announcement.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\BankAccountFound.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\Deal.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\Fund.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\FundDetail.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\FundFlow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\Hold.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhost\ReportSrv.wsdl" />
+    <None Include="Web References\localhost\Sale.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\TradeAccountFund.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TabStrip.dll" />
+    <None Include="Web References\localhost\ReportSrv.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:9999/ReportSrv.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhost\</RelPath>
+      <UpdateFromURL>http://localhost:9999/ReportSrv.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Trade_Manager_localhost_ReportSrv</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

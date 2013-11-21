@@ -1,0 +1,3031 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetListBankAccountFound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListBankAccountFoundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListBankAccountFoundResult" type="tns:ArrayOfBankAccountFound" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBankAccountFound">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BankAccountFound" nillable="true" type="tns:BankAccountFound" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BankAccountFound">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoginName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountProperty" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QCQY" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DRCRJ" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DQZDKCJE" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZTZJ" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanBankAccountFounds">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanBankAccountFoundsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanBankAccountFoundsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:LoginResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="tns:LoginResultFlags" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LoginResultFlags">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="NullUser" />
+          <s:enumeration value="ErrorName" />
+          <s:enumeration value="ErrorPWD" />
+          <s:enumeration value="ErrorCode" />
+          <s:enumeration value="ErrorNet" />
+          <s:enumeration value="ErrorService" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ChangedLoginWord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldpwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newpwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangedLoginWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangedLoginWordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePrices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePricesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prices" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePriceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPriceResult" type="tns:QuoteCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QuoteCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FullData" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAccountsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCommoditys">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryCommoditysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCommoditysResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDealers">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryDealersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryDealersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAnnouncements">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="queryOver" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="caption" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="start1" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end1" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="start2" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end2" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAnnouncementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAnnouncementsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAccountFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAccountFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAccountFundResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryFundFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryFundFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryFundFlowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Sale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Sale">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettleDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Goods" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaleNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SalePrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleProfitLoss" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleCommission" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuyNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaleType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSaleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Sale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSaleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSaleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListSaleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListSaleResult" type="tns:ArrayOfSale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSale">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Sale" nillable="true" type="tns:Sale" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanSales">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanSalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanSalesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Deal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Deal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettleDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DealNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Goods" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DealAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DealPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DealMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Commission" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DealTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddDealResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDealResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDeal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Deal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDealResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDealResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDeal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDealResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDealResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListDeal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListDealResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListDealResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListDeal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListDealResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListDealResult" type="tns:ArrayOfDeal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDeal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Deal" nillable="true" type="tns:Deal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanDeals">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanDealsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanDealsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHold">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Hold" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Hold">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettleDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Goods" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoldNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DealPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldProfitLoss" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldBailRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldEmploy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DelayMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreateNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddHoldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddHoldResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateHold">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Hold" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateHoldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateHoldResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHold">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHoldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteHoldResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListHold">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListHoldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListHoldResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListHold">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListHoldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListHoldResult" type="tns:ArrayOfHold" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHold">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Hold" nillable="true" type="tns:Hold" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanHolds">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanHoldsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanHoldsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Fund" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Fund">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettleDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="No" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChangeMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChangedMoney" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelevanceNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFundResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Fund" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListFundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListFundResult" type="tns:ArrayOfFund" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFund">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Fund" nillable="true" type="tns:Fund" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanFunds">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanFundsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanFundsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFundDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:FundDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FundDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettleDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeginRights" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InOutMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleProfitLoss" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldProfitLoss" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Commission" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DelayMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldEmploy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndRights" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="RiskRate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddFundDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFundDetailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFundDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:FundDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFundDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFundDetailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFundDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFundDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFundDetailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListFundDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListFundDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListFundDetailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFundDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFundDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListFundDetailResult" type="tns:ArrayOfFundDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFundDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FundDetail" nillable="true" type="tns:FundDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanFundDetail">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanFundDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanFundDetailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFundFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:FundFlow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FundFlow">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoginName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlowID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HappenTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutFund" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InFund" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddFundFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFundFlowResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFundFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:FundFlow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFundFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFundFlowResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFundFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFundFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFundFlowResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListFundFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListFundFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListFundFlowResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFundFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFundFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListFundFlowResult" type="tns:ArrayOfFundFlow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFundFlow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FundFlow" nillable="true" type="tns:FundFlow" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanFundFlows">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanFundFlowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanFundFlowsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAnnouncement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Announcement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Announcement">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeriesNum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Institution" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContentText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Overtime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddAnnouncementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAnnouncementResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAnnouncement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:Announcement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAnnouncementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAnnouncementResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnnouncement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnnouncementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAnnouncementResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListAnnouncement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListAnnouncementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListAnnouncementResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListAnnouncement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListAnnouncementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListAnnouncementResult" type="tns:ArrayOfAnnouncement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnnouncement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Announcement" nillable="true" type="tns:Announcement" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanAnnouncements">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanAnnouncementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanAnnouncementsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTradeAccountFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:TradeAccountFund" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TradeAccountFund">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TradeAccount" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QCQY" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DRCRQ" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DQKCJE" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KYBZJ" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddTradeAccountFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTradeAccountFundResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTradeAccountFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:TradeAccountFund" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTradeAccountFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTradeAccountFundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTradeAccountFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTradeAccountFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteTradeAccountFundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListTradeAccountFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListTradeAccountFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListTradeAccountFundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListTradeAccountFund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filedOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListTradeAccountFundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListTradeAccountFundResult" type="tns:ArrayOfTradeAccountFund" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTradeAccountFund">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TradeAccountFund" nillable="true" type="tns:TradeAccountFund" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CleanTradeAccountFunds">
+        <s:complexType />
+      </s:element>
+      <s:element name="CleanTradeAccountFundsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanTradeAccountFundsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBankAccountFound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:BankAccountFound" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBankAccountFoundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddBankAccountFoundResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBankAccountFound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:BankAccountFound" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBankAccountFoundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBankAccountFoundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBankAccountFound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBankAccountFoundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBankAccountFoundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListBankAccountFound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dlist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteListBankAccountFoundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteListBankAccountFoundResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetListBankAccountFoundSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListBankAccountFound" />
+  </wsdl:message>
+  <wsdl:message name="GetListBankAccountFoundSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListBankAccountFoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanBankAccountFoundsSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanBankAccountFounds" />
+  </wsdl:message>
+  <wsdl:message name="CleanBankAccountFoundsSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanBankAccountFoundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangedLoginWordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangedLoginWord" />
+  </wsdl:message>
+  <wsdl:message name="ChangedLoginWordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangedLoginWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePricesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePrices" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePricesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePricesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePrice" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrice" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAccounts" />
+  </wsdl:message>
+  <wsdl:message name="QueryAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCommoditysSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCommoditys" />
+  </wsdl:message>
+  <wsdl:message name="QueryCommoditysSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCommoditysResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryDealersSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryDealers" />
+  </wsdl:message>
+  <wsdl:message name="QueryDealersSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryDealersResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAnnouncementsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAnnouncements" />
+  </wsdl:message>
+  <wsdl:message name="QueryAnnouncementsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAnnouncementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAccountFundSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAccountFund" />
+  </wsdl:message>
+  <wsdl:message name="QueryAccountFundSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAccountFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryFundFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryFundFlow" />
+  </wsdl:message>
+  <wsdl:message name="QueryFundFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryFundFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSale" />
+  </wsdl:message>
+  <wsdl:message name="AddSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSale" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSale" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListSale" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListSale" />
+  </wsdl:message>
+  <wsdl:message name="GetListSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanSalesSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanSales" />
+  </wsdl:message>
+  <wsdl:message name="CleanSalesSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDealSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDeal" />
+  </wsdl:message>
+  <wsdl:message name="AddDealSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDealSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDeal" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDealSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDealSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDeal" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDealSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListDealSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListDeal" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListDealSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListDealSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListDeal" />
+  </wsdl:message>
+  <wsdl:message name="GetListDealSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanDealsSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanDeals" />
+  </wsdl:message>
+  <wsdl:message name="CleanDealsSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanDealsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHoldSoapIn">
+    <wsdl:part name="parameters" element="tns:AddHold" />
+  </wsdl:message>
+  <wsdl:message name="AddHoldSoapOut">
+    <wsdl:part name="parameters" element="tns:AddHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateHoldSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateHold" />
+  </wsdl:message>
+  <wsdl:message name="UpdateHoldSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHoldSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHold" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHoldSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListHoldSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListHold" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListHoldSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListHoldSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListHold" />
+  </wsdl:message>
+  <wsdl:message name="GetListHoldSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanHoldsSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanHolds" />
+  </wsdl:message>
+  <wsdl:message name="CleanHoldsSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanHoldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFundSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFund" />
+  </wsdl:message>
+  <wsdl:message name="AddFundSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFundSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFund" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFundSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFundSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFund" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFundSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListFundSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListFund" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListFundSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListFundSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListFund" />
+  </wsdl:message>
+  <wsdl:message name="GetListFundSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanFundsSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanFunds" />
+  </wsdl:message>
+  <wsdl:message name="CleanFundsSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFundDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFundDetail" />
+  </wsdl:message>
+  <wsdl:message name="AddFundDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFundDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFundDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFundDetail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFundDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFundDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFundDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFundDetail" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFundDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFundDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListFundDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListFundDetail" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListFundDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListFundDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListFundDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListFundDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetListFundDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListFundDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanFundDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanFundDetail" />
+  </wsdl:message>
+  <wsdl:message name="CleanFundDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanFundDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFundFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFundFlow" />
+  </wsdl:message>
+  <wsdl:message name="AddFundFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFundFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFundFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFundFlow" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFundFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFundFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFundFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFundFlow" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFundFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFundFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListFundFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListFundFlow" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListFundFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListFundFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListFundFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListFundFlow" />
+  </wsdl:message>
+  <wsdl:message name="GetListFundFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListFundFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanFundFlowsSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanFundFlows" />
+  </wsdl:message>
+  <wsdl:message name="CleanFundFlowsSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanFundFlowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAnnouncementSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="AddAnnouncementSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAnnouncementSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAnnouncementSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnnouncementSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnnouncementSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListAnnouncementSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListAnnouncementSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListAnnouncementSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="GetListAnnouncementSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanAnnouncementsSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanAnnouncements" />
+  </wsdl:message>
+  <wsdl:message name="CleanAnnouncementsSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanAnnouncementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTradeAccountFundSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTradeAccountFund" />
+  </wsdl:message>
+  <wsdl:message name="AddTradeAccountFundSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTradeAccountFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTradeAccountFundSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTradeAccountFund" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTradeAccountFundSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTradeAccountFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTradeAccountFundSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTradeAccountFund" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTradeAccountFundSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTradeAccountFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListTradeAccountFundSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListTradeAccountFund" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListTradeAccountFundSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListTradeAccountFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListTradeAccountFundSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListTradeAccountFund" />
+  </wsdl:message>
+  <wsdl:message name="GetListTradeAccountFundSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListTradeAccountFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanTradeAccountFundsSoapIn">
+    <wsdl:part name="parameters" element="tns:CleanTradeAccountFunds" />
+  </wsdl:message>
+  <wsdl:message name="CleanTradeAccountFundsSoapOut">
+    <wsdl:part name="parameters" element="tns:CleanTradeAccountFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBankAccountFoundSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBankAccountFound" />
+  </wsdl:message>
+  <wsdl:message name="AddBankAccountFoundSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBankAccountFoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBankAccountFoundSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBankAccountFound" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBankAccountFoundSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBankAccountFoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBankAccountFoundSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBankAccountFound" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBankAccountFoundSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBankAccountFoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListBankAccountFoundSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteListBankAccountFound" />
+  </wsdl:message>
+  <wsdl:message name="DeleteListBankAccountFoundSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteListBankAccountFoundResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClientSrvSoap">
+    <wsdl:operation name="GetListBankAccountFound">
+      <wsdl:input message="tns:GetListBankAccountFoundSoapIn" />
+      <wsdl:output message="tns:GetListBankAccountFoundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanBankAccountFounds">
+      <wsdl:input message="tns:CleanBankAccountFoundsSoapIn" />
+      <wsdl:output message="tns:CleanBankAccountFoundsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">测试</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登录验证</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangedLoginWord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改登录密码</wsdl:documentation>
+      <wsdl:input message="tns:ChangedLoginWordSoapIn" />
+      <wsdl:output message="tns:ChangedLoginWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传行情信息</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePricesSoapIn" />
+      <wsdl:output message="tns:UpdatePricesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传行情信息</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePriceSoapIn" />
+      <wsdl:output message="tns:UpdatePriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取行情信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPriceSoapIn" />
+      <wsdl:output message="tns:GetPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAccounts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取帐户信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryAccountsSoapIn" />
+      <wsdl:output message="tns:QueryAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCommoditys">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取商品信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryCommoditysSoapIn" />
+      <wsdl:output message="tns:QueryCommoditysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDealers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取交易商信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryDealersSoapIn" />
+      <wsdl:output message="tns:QueryDealersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAnnouncements">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取公告</wsdl:documentation>
+      <wsdl:input message="tns:QueryAnnouncementsSoapIn" />
+      <wsdl:output message="tns:QueryAnnouncementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAccountFund">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">出入金市场信息查询</wsdl:documentation>
+      <wsdl:input message="tns:QueryAccountFundSoapIn" />
+      <wsdl:output message="tns:QueryAccountFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryFundFlow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">出入金流水查询</wsdl:documentation>
+      <wsdl:input message="tns:QueryFundFlowSoapIn" />
+      <wsdl:output message="tns:QueryFundFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSale">
+      <wsdl:input message="tns:AddSaleSoapIn" />
+      <wsdl:output message="tns:AddSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSale">
+      <wsdl:input message="tns:UpdateSaleSoapIn" />
+      <wsdl:output message="tns:UpdateSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSale">
+      <wsdl:input message="tns:DeleteSaleSoapIn" />
+      <wsdl:output message="tns:DeleteSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListSale">
+      <wsdl:input message="tns:DeleteListSaleSoapIn" />
+      <wsdl:output message="tns:DeleteListSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListSale">
+      <wsdl:input message="tns:GetListSaleSoapIn" />
+      <wsdl:output message="tns:GetListSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanSales">
+      <wsdl:input message="tns:CleanSalesSoapIn" />
+      <wsdl:output message="tns:CleanSalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeal">
+      <wsdl:input message="tns:AddDealSoapIn" />
+      <wsdl:output message="tns:AddDealSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeal">
+      <wsdl:input message="tns:UpdateDealSoapIn" />
+      <wsdl:output message="tns:UpdateDealSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDeal">
+      <wsdl:input message="tns:DeleteDealSoapIn" />
+      <wsdl:output message="tns:DeleteDealSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListDeal">
+      <wsdl:input message="tns:DeleteListDealSoapIn" />
+      <wsdl:output message="tns:DeleteListDealSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListDeal">
+      <wsdl:input message="tns:GetListDealSoapIn" />
+      <wsdl:output message="tns:GetListDealSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanDeals">
+      <wsdl:input message="tns:CleanDealsSoapIn" />
+      <wsdl:output message="tns:CleanDealsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHold">
+      <wsdl:input message="tns:AddHoldSoapIn" />
+      <wsdl:output message="tns:AddHoldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHold">
+      <wsdl:input message="tns:UpdateHoldSoapIn" />
+      <wsdl:output message="tns:UpdateHoldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHold">
+      <wsdl:input message="tns:DeleteHoldSoapIn" />
+      <wsdl:output message="tns:DeleteHoldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListHold">
+      <wsdl:input message="tns:DeleteListHoldSoapIn" />
+      <wsdl:output message="tns:DeleteListHoldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListHold">
+      <wsdl:input message="tns:GetListHoldSoapIn" />
+      <wsdl:output message="tns:GetListHoldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanHolds">
+      <wsdl:input message="tns:CleanHoldsSoapIn" />
+      <wsdl:output message="tns:CleanHoldsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFund">
+      <wsdl:input message="tns:AddFundSoapIn" />
+      <wsdl:output message="tns:AddFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFund">
+      <wsdl:input message="tns:UpdateFundSoapIn" />
+      <wsdl:output message="tns:UpdateFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFund">
+      <wsdl:input message="tns:DeleteFundSoapIn" />
+      <wsdl:output message="tns:DeleteFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFund">
+      <wsdl:input message="tns:DeleteListFundSoapIn" />
+      <wsdl:output message="tns:DeleteListFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListFund">
+      <wsdl:input message="tns:GetListFundSoapIn" />
+      <wsdl:output message="tns:GetListFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanFunds">
+      <wsdl:input message="tns:CleanFundsSoapIn" />
+      <wsdl:output message="tns:CleanFundsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFundDetail">
+      <wsdl:input message="tns:AddFundDetailSoapIn" />
+      <wsdl:output message="tns:AddFundDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFundDetail">
+      <wsdl:input message="tns:UpdateFundDetailSoapIn" />
+      <wsdl:output message="tns:UpdateFundDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFundDetail">
+      <wsdl:input message="tns:DeleteFundDetailSoapIn" />
+      <wsdl:output message="tns:DeleteFundDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFundDetail">
+      <wsdl:input message="tns:DeleteListFundDetailSoapIn" />
+      <wsdl:output message="tns:DeleteListFundDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListFundDetail">
+      <wsdl:input message="tns:GetListFundDetailSoapIn" />
+      <wsdl:output message="tns:GetListFundDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanFundDetail">
+      <wsdl:input message="tns:CleanFundDetailSoapIn" />
+      <wsdl:output message="tns:CleanFundDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFundFlow">
+      <wsdl:input message="tns:AddFundFlowSoapIn" />
+      <wsdl:output message="tns:AddFundFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFundFlow">
+      <wsdl:input message="tns:UpdateFundFlowSoapIn" />
+      <wsdl:output message="tns:UpdateFundFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFundFlow">
+      <wsdl:input message="tns:DeleteFundFlowSoapIn" />
+      <wsdl:output message="tns:DeleteFundFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFundFlow">
+      <wsdl:input message="tns:DeleteListFundFlowSoapIn" />
+      <wsdl:output message="tns:DeleteListFundFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListFundFlow">
+      <wsdl:input message="tns:GetListFundFlowSoapIn" />
+      <wsdl:output message="tns:GetListFundFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanFundFlows">
+      <wsdl:input message="tns:CleanFundFlowsSoapIn" />
+      <wsdl:output message="tns:CleanFundFlowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAnnouncement">
+      <wsdl:input message="tns:AddAnnouncementSoapIn" />
+      <wsdl:output message="tns:AddAnnouncementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnnouncement">
+      <wsdl:input message="tns:UpdateAnnouncementSoapIn" />
+      <wsdl:output message="tns:UpdateAnnouncementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnnouncement">
+      <wsdl:input message="tns:DeleteAnnouncementSoapIn" />
+      <wsdl:output message="tns:DeleteAnnouncementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListAnnouncement">
+      <wsdl:input message="tns:DeleteListAnnouncementSoapIn" />
+      <wsdl:output message="tns:DeleteListAnnouncementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAnnouncement">
+      <wsdl:input message="tns:GetListAnnouncementSoapIn" />
+      <wsdl:output message="tns:GetListAnnouncementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanAnnouncements">
+      <wsdl:input message="tns:CleanAnnouncementsSoapIn" />
+      <wsdl:output message="tns:CleanAnnouncementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTradeAccountFund">
+      <wsdl:input message="tns:AddTradeAccountFundSoapIn" />
+      <wsdl:output message="tns:AddTradeAccountFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTradeAccountFund">
+      <wsdl:input message="tns:UpdateTradeAccountFundSoapIn" />
+      <wsdl:output message="tns:UpdateTradeAccountFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTradeAccountFund">
+      <wsdl:input message="tns:DeleteTradeAccountFundSoapIn" />
+      <wsdl:output message="tns:DeleteTradeAccountFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListTradeAccountFund">
+      <wsdl:input message="tns:DeleteListTradeAccountFundSoapIn" />
+      <wsdl:output message="tns:DeleteListTradeAccountFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListTradeAccountFund">
+      <wsdl:input message="tns:GetListTradeAccountFundSoapIn" />
+      <wsdl:output message="tns:GetListTradeAccountFundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanTradeAccountFunds">
+      <wsdl:input message="tns:CleanTradeAccountFundsSoapIn" />
+      <wsdl:output message="tns:CleanTradeAccountFundsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBankAccountFound">
+      <wsdl:input message="tns:AddBankAccountFoundSoapIn" />
+      <wsdl:output message="tns:AddBankAccountFoundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankAccountFound">
+      <wsdl:input message="tns:UpdateBankAccountFoundSoapIn" />
+      <wsdl:output message="tns:UpdateBankAccountFoundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBankAccountFound">
+      <wsdl:input message="tns:DeleteBankAccountFoundSoapIn" />
+      <wsdl:output message="tns:DeleteBankAccountFoundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListBankAccountFound">
+      <wsdl:input message="tns:DeleteListBankAccountFoundSoapIn" />
+      <wsdl:output message="tns:DeleteListBankAccountFoundSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientSrvSoap" type="tns:ClientSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListBankAccountFound">
+      <soap:operation soapAction="http://tempuri.org/GetListBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanBankAccountFounds">
+      <soap:operation soapAction="http://tempuri.org/CleanBankAccountFounds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangedLoginWord">
+      <soap:operation soapAction="http://tempuri.org/ChangedLoginWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrices">
+      <soap:operation soapAction="http://tempuri.org/UpdatePrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrice">
+      <soap:operation soapAction="http://tempuri.org/UpdatePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrice">
+      <soap:operation soapAction="http://tempuri.org/GetPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAccounts">
+      <soap:operation soapAction="http://tempuri.org/QueryAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCommoditys">
+      <soap:operation soapAction="http://tempuri.org/QueryCommoditys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDealers">
+      <soap:operation soapAction="http://tempuri.org/QueryDealers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAnnouncements">
+      <soap:operation soapAction="http://tempuri.org/QueryAnnouncements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAccountFund">
+      <soap:operation soapAction="http://tempuri.org/QueryAccountFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFundFlow">
+      <soap:operation soapAction="http://tempuri.org/QueryFundFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSale">
+      <soap:operation soapAction="http://tempuri.org/AddSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSale">
+      <soap:operation soapAction="http://tempuri.org/UpdateSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSale">
+      <soap:operation soapAction="http://tempuri.org/DeleteSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListSale">
+      <soap:operation soapAction="http://tempuri.org/DeleteListSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListSale">
+      <soap:operation soapAction="http://tempuri.org/GetListSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanSales">
+      <soap:operation soapAction="http://tempuri.org/CleanSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeal">
+      <soap:operation soapAction="http://tempuri.org/AddDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeal">
+      <soap:operation soapAction="http://tempuri.org/UpdateDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDeal">
+      <soap:operation soapAction="http://tempuri.org/DeleteDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListDeal">
+      <soap:operation soapAction="http://tempuri.org/DeleteListDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDeal">
+      <soap:operation soapAction="http://tempuri.org/GetListDeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanDeals">
+      <soap:operation soapAction="http://tempuri.org/CleanDeals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHold">
+      <soap:operation soapAction="http://tempuri.org/AddHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHold">
+      <soap:operation soapAction="http://tempuri.org/UpdateHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHold">
+      <soap:operation soapAction="http://tempuri.org/DeleteHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListHold">
+      <soap:operation soapAction="http://tempuri.org/DeleteListHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHold">
+      <soap:operation soapAction="http://tempuri.org/GetListHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanHolds">
+      <soap:operation soapAction="http://tempuri.org/CleanHolds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFund">
+      <soap:operation soapAction="http://tempuri.org/AddFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFund">
+      <soap:operation soapAction="http://tempuri.org/UpdateFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFund">
+      <soap:operation soapAction="http://tempuri.org/DeleteFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFund">
+      <soap:operation soapAction="http://tempuri.org/DeleteListFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFund">
+      <soap:operation soapAction="http://tempuri.org/GetListFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanFunds">
+      <soap:operation soapAction="http://tempuri.org/CleanFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFundDetail">
+      <soap:operation soapAction="http://tempuri.org/AddFundDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFundDetail">
+      <soap:operation soapAction="http://tempuri.org/UpdateFundDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFundDetail">
+      <soap:operation soapAction="http://tempuri.org/DeleteFundDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFundDetail">
+      <soap:operation soapAction="http://tempuri.org/DeleteListFundDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFundDetail">
+      <soap:operation soapAction="http://tempuri.org/GetListFundDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanFundDetail">
+      <soap:operation soapAction="http://tempuri.org/CleanFundDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFundFlow">
+      <soap:operation soapAction="http://tempuri.org/AddFundFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFundFlow">
+      <soap:operation soapAction="http://tempuri.org/UpdateFundFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFundFlow">
+      <soap:operation soapAction="http://tempuri.org/DeleteFundFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFundFlow">
+      <soap:operation soapAction="http://tempuri.org/DeleteListFundFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFundFlow">
+      <soap:operation soapAction="http://tempuri.org/GetListFundFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanFundFlows">
+      <soap:operation soapAction="http://tempuri.org/CleanFundFlows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAnnouncement">
+      <soap:operation soapAction="http://tempuri.org/AddAnnouncement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnnouncement">
+      <soap:operation soapAction="http://tempuri.org/UpdateAnnouncement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnnouncement">
+      <soap:operation soapAction="http://tempuri.org/DeleteAnnouncement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListAnnouncement">
+      <soap:operation soapAction="http://tempuri.org/DeleteListAnnouncement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAnnouncement">
+      <soap:operation soapAction="http://tempuri.org/GetListAnnouncement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanAnnouncements">
+      <soap:operation soapAction="http://tempuri.org/CleanAnnouncements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTradeAccountFund">
+      <soap:operation soapAction="http://tempuri.org/AddTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTradeAccountFund">
+      <soap:operation soapAction="http://tempuri.org/UpdateTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTradeAccountFund">
+      <soap:operation soapAction="http://tempuri.org/DeleteTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListTradeAccountFund">
+      <soap:operation soapAction="http://tempuri.org/DeleteListTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTradeAccountFund">
+      <soap:operation soapAction="http://tempuri.org/GetListTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanTradeAccountFunds">
+      <soap:operation soapAction="http://tempuri.org/CleanTradeAccountFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBankAccountFound">
+      <soap:operation soapAction="http://tempuri.org/AddBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankAccountFound">
+      <soap:operation soapAction="http://tempuri.org/UpdateBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBankAccountFound">
+      <soap:operation soapAction="http://tempuri.org/DeleteBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListBankAccountFound">
+      <soap:operation soapAction="http://tempuri.org/DeleteListBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientSrvSoap12" type="tns:ClientSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListBankAccountFound">
+      <soap12:operation soapAction="http://tempuri.org/GetListBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanBankAccountFounds">
+      <soap12:operation soapAction="http://tempuri.org/CleanBankAccountFounds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangedLoginWord">
+      <soap12:operation soapAction="http://tempuri.org/ChangedLoginWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrices">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrice">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrice">
+      <soap12:operation soapAction="http://tempuri.org/GetPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAccounts">
+      <soap12:operation soapAction="http://tempuri.org/QueryAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCommoditys">
+      <soap12:operation soapAction="http://tempuri.org/QueryCommoditys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDealers">
+      <soap12:operation soapAction="http://tempuri.org/QueryDealers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAnnouncements">
+      <soap12:operation soapAction="http://tempuri.org/QueryAnnouncements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAccountFund">
+      <soap12:operation soapAction="http://tempuri.org/QueryAccountFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFundFlow">
+      <soap12:operation soapAction="http://tempuri.org/QueryFundFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSale">
+      <soap12:operation soapAction="http://tempuri.org/AddSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSale">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSale">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListSale">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListSale">
+      <soap12:operation soapAction="http://tempuri.org/GetListSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanSales">
+      <soap12:operation soapAction="http://tempuri.org/CleanSales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeal">
+      <soap12:operation soapAction="http://tempuri.org/AddDeal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeal">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDeal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDeal">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDeal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListDeal">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListDeal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDeal">
+      <soap12:operation soapAction="http://tempuri.org/GetListDeal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanDeals">
+      <soap12:operation soapAction="http://tempuri.org/CleanDeals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHold">
+      <soap12:operation soapAction="http://tempuri.org/AddHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHold">
+      <soap12:operation soapAction="http://tempuri.org/UpdateHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHold">
+      <soap12:operation soapAction="http://tempuri.org/DeleteHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListHold">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHold">
+      <soap12:operation soapAction="http://tempuri.org/GetListHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanHolds">
+      <soap12:operation soapAction="http://tempuri.org/CleanHolds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFund">
+      <soap12:operation soapAction="http://tempuri.org/AddFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFund">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFund">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFund">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFund">
+      <soap12:operation soapAction="http://tempuri.org/GetListFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanFunds">
+      <soap12:operation soapAction="http://tempuri.org/CleanFunds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFundDetail">
+      <soap12:operation soapAction="http://tempuri.org/AddFundDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFundDetail">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFundDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFundDetail">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFundDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFundDetail">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListFundDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFundDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetListFundDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanFundDetail">
+      <soap12:operation soapAction="http://tempuri.org/CleanFundDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFundFlow">
+      <soap12:operation soapAction="http://tempuri.org/AddFundFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFundFlow">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFundFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFundFlow">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFundFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListFundFlow">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListFundFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFundFlow">
+      <soap12:operation soapAction="http://tempuri.org/GetListFundFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanFundFlows">
+      <soap12:operation soapAction="http://tempuri.org/CleanFundFlows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAnnouncement">
+      <soap12:operation soapAction="http://tempuri.org/AddAnnouncement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnnouncement">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAnnouncement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnnouncement">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAnnouncement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListAnnouncement">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListAnnouncement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAnnouncement">
+      <soap12:operation soapAction="http://tempuri.org/GetListAnnouncement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanAnnouncements">
+      <soap12:operation soapAction="http://tempuri.org/CleanAnnouncements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTradeAccountFund">
+      <soap12:operation soapAction="http://tempuri.org/AddTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTradeAccountFund">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTradeAccountFund">
+      <soap12:operation soapAction="http://tempuri.org/DeleteTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListTradeAccountFund">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTradeAccountFund">
+      <soap12:operation soapAction="http://tempuri.org/GetListTradeAccountFund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanTradeAccountFunds">
+      <soap12:operation soapAction="http://tempuri.org/CleanTradeAccountFunds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBankAccountFound">
+      <soap12:operation soapAction="http://tempuri.org/AddBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankAccountFound">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBankAccountFound">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteListBankAccountFound">
+      <soap12:operation soapAction="http://tempuri.org/DeleteListBankAccountFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientSrv">
+    <wsdl:port name="ClientSrvSoap" binding="tns:ClientSrvSoap">
+      <soap:address location="http://localhost:9999/ClientSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientSrvSoap12" binding="tns:ClientSrvSoap12">
+      <soap12:address location="http://localhost:9999/ClientSrv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

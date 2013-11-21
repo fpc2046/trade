@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7526EB52-3CF0-485E-82E4-B10E2B379000}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trade.ClientApp</RootNamespace>
+    <AssemblyName>SysFrame</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="BLLControls\ChangePW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\ChangePW.Designer.cs">
+      <DependentUpon>ChangePW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\FormAnnouncementItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\FormAnnouncementItem.Designer.cs">
+      <DependentUpon>FormAnnouncementItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\FormJianCang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\FormJianCang.Designer.cs">
+      <DependentUpon>FormJianCang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\FormPingCang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\FormPingCang.Designer.cs">
+      <DependentUpon>FormPingCang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\FormYuJing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\FormYuJing.Designer.cs">
+      <DependentUpon>FormYuJing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\TaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLLControls\TaskbarNotifier.Designer.cs">
+      <DependentUpon>TaskbarNotifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCAnnouncement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCAnnouncement.Designer.cs">
+      <DependentUpon>UCAnnouncement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction2.Designer.cs">
+      <DependentUpon>UCFunction2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction3.Designer.cs">
+      <DependentUpon>UCFunction3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction4.Designer.cs">
+      <DependentUpon>UCFunction4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction5.Designer.cs">
+      <DependentUpon>UCFunction5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction6.Designer.cs">
+      <DependentUpon>UCFunction6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction7.Designer.cs">
+      <DependentUpon>UCFunction7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction8.Designer.cs">
+      <DependentUpon>UCFunction8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCFunction9.Designer.cs">
+      <DependentUpon>UCFunction9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCGoldManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCGoldManage.Designer.cs">
+      <DependentUpon>UCGoldManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCIndexFream.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCIndexFream.Designer.cs">
+      <DependentUpon>UCIndexFream.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCNavigateTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCPriceTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCPriceTable.Designer.cs">
+      <DependentUpon>UCPriceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCSysLock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCSysLock.Designer.cs">
+      <DependentUpon>UCSysLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCTableGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCTableGroup.Designer.cs">
+      <DependentUpon>UCTableGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLLControls\UCTrade.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLLControls\UCTrade.Designer.cs">
+      <DependentUpon>UCTrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Base64.cs" />
+    <Compile Include="BLL\ChannelLoginForm.cs" />
+    <Compile Include="BLL\ChannelMainForm.cs" />
+    <Compile Include="BLL\CommonData.cs" />
+    <Compile Include="BLL\DataPlug.cs" />
+    <Compile Include="BLL\LoginPlug.cs" />
+    <Compile Include="BLL\PriceData.cs" />
+    <Compile Include="BLL\PriceListenor.cs" />
+    <Compile Include="BLL\Session.cs" />
+    <Compile Include="BLL\SettingInfo.cs" />
+    <Compile Include="BLL\TableFormat.cs" />
+    <Compile Include="BLL\UcFactory.cs" />
+    <Compile Include="BLL\UserDownload.cs" />
+    <Compile Include="BLL\YUJingInfo.cs" />
+    <Compile Include="Controls\LoginButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageBoxEx.Designer.cs">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NoBorderFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\NoBorderFrom.Designer.cs">
+      <DependentUpon>NoBorderFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PanelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PathHelper.cs" />
+    <Compile Include="Controls\PriceBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PricePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Win32.cs" />
+    <Compile Include="LoginFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrom.Designer.cs">
+      <DependentUpon>LoginFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="tradeDataSet.cs">
+      <DependentUpon>tradeDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="tradeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tradeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UcReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcReport.Designer.cs">
+      <DependentUpon>UcReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClientService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="yj1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yj.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BLLControls\ChangePW.resx">
+      <DependentUpon>ChangePW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\FormAnnouncementItem.resx">
+      <DependentUpon>FormAnnouncementItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\FormJianCang.resx">
+      <DependentUpon>FormJianCang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\FormPingCang.resx">
+      <DependentUpon>FormPingCang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\FormYuJing.resx">
+      <DependentUpon>FormYuJing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\TaskbarNotifier.resx">
+      <DependentUpon>TaskbarNotifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCAnnouncement.resx">
+      <DependentUpon>UCAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction2.resx">
+      <DependentUpon>UCFunction2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction3.resx">
+      <DependentUpon>UCFunction3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction4.resx">
+      <DependentUpon>UCFunction4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction5.resx">
+      <DependentUpon>UCFunction5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction6.resx">
+      <DependentUpon>UCFunction6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction7.resx">
+      <DependentUpon>UCFunction7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction8.resx">
+      <DependentUpon>UCFunction8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCFunction9.resx">
+      <DependentUpon>UCFunction9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCGoldManage.resx">
+      <DependentUpon>UCGoldManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCIndexFream.resx">
+      <DependentUpon>UCIndexFream.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCNavigateTree.resx">
+      <DependentUpon>UCNavigateTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCPriceTable.resx">
+      <DependentUpon>UCPriceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCSysLock.resx">
+      <DependentUpon>UCSysLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCTableGroup.resx">
+      <DependentUpon>UCTableGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BLLControls\UCTrade.resx">
+      <DependentUpon>UCTrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageBoxEx.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NoBorderFrom.resx">
+      <DependentUpon>NoBorderFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PricePanel.resx">
+      <DependentUpon>PricePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrom.resx">
+      <DependentUpon>LoginFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptMain.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcReport.resx">
+      <DependentUpon>UcReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="tradeDataSet.xsc">
+      <DependentUpon>tradeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tradeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tradeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tradeDataSet.xss">
+      <DependentUpon>tradeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\Announcement.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\BankAccountFound.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\ClientSrv.wsdl" />
+    <None Include="Web References\ClientService\Deal.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\Fund.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\FundDetail.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\FundFlow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\Hold.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\LoginResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\QuoteCard.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClientService\Sale.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientService\TradeAccountFund.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="yj.xsc">
+      <DependentUpon>yj.xsd</DependentUpon>
+    </None>
+    <None Include="yj.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yj1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yj.xss">
+      <DependentUpon>yj.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:9999/ClientSrv.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClientService\</RelPath>
+      <UpdateFromURL>http://localhost:9999/ClientSrv.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Trade_ClientApp_ClientService_ClientSrv</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo2.ico" />
+    <Content Include="Properties\tsHelp_ico.png" />
+    <Content Include="Resources\arr0.png" />
+    <Content Include="Resources\arr1.png" />
+    <Content Include="Resources\arr2.png" />
+    <Content Include="Resources\button_bg_write.png" />
+    <Content Include="Resources\changePW_bg.png" />
+    <Content Include="Resources\checked_MI.png" />
+    <Content Include="Resources\ico_unbiased.png" />
+    <Content Include="Resources\left.png" />
+    <Content Include="Resources\loading.gif" />
+    <Content Include="Resources\lockbtn_icon.png" />
+    <Content Include="Resources\lock_bg.png" />
+    <Content Include="Resources\loginbtn_bg.png" />
+    <Content Include="Resources\login_bg.png" />
+    <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\logo2.ico" />
+    <Content Include="Resources\main.jpg" />
+    <Content Include="Resources\MS_Asterisk.png" />
+    <Content Include="Resources\MS_Error.png" />
+    <Content Include="Resources\MS_Information.png" />
+    <Content Include="Resources\MS_Warning.png" />
+    <Content Include="Resources\priceblock_bg.png" />
+    <Content Include="Resources\right.png" />
+    <Content Include="Resources\sysbtnClosebg_Hover.png" />
+    <Content Include="Resources\sysbtnClosebg_nor.png" />
+    <Content Include="Resources\taskNotifer_bg.png" />
+    <Content Include="Resources\taskNotifer_close_bg.png" />
+    <Content Include="Resources\tsbg_1.png" />
+    <Content Include="Resources\tsbg_2.png" />
+    <Content Include="Resources\tsbg_3.png" />
+    <Content Include="Resources\tsbg_4.png" />
+    <Content Include="Resources\tsbg_5.png" />
+    <Content Include="Resources\tsbg_6.png" />
+    <Content Include="Resources\tsbg_7.png" />
+    <Content Include="Resources\tsbg_8.png" />
+    <Content Include="Resources\tsbg_9.png" />
+    <Content Include="Resources\tsHelp_ico.png" />
+    <Content Include="Resources\txtRefush.png" />
+    <None Include="Web References\ClientService\ClientSrv.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
